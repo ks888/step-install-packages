@@ -10,11 +10,11 @@ retry() {
         fail "Retry exceeds max retries";
     fi
 
-    if [ "$WERCKER_INSTALL_PACKAGES_CLEAR_CACHE" = "true" ]; then
+    if [ "$WERCKER_INSTALL_PACKAGES_CLEAR_CACHE_ON_RETRY" = "true" ]; then
         info "Clearing the cache: $WERCKER_CACHE_DIR/wercker"
         rm -f $WERCKER_CACHE_DIR/wercker/aptupdated && rm -rf $APT_LIST_PATH
     else
-        info "Skipping clearing cache; WERCKER_INSTALL_PACKAGES_CLEAR_CACHE is not set to true";
+        info "Skipping clearing cache; WERCKER_INSTALL_PACKAGES_CLEAR_CACHE_ON_RETRY is not set to true";
     fi
 
     info "Retrying apt-get-install, try: $try";

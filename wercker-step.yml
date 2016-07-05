@@ -1,5 +1,5 @@
 name: install-packages
-version: 1.0.0
+version: 1.0.1
 description: install-packages step
 keywords:
   - apt-get
@@ -7,7 +7,7 @@ keywords:
   - install
   - packages
 properties:
-  clear-cache:
+  clear-cache-on-retry:
     type: string
     required: false
     default: "true"
